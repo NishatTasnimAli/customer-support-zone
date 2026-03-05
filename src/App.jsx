@@ -561,7 +561,8 @@ export default function App() {
 
       </footer>
 
-      {/* Toast */}
+      {/* Toastify Alert Code */}
+      
       <ToastContainer position="top-right" autoClose={2000} />
     </>
   );
