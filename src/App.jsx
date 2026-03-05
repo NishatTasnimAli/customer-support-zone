@@ -218,6 +218,178 @@ export default function App() {
         </div>
 
       </div>
+      {/* Main Customer Support section */}
+      <div className="px-8 py-15 grid md:grid-cols-3 gap-6">
+
+        <div className="md:col-span-2">
+          <h2 className="text-4xl font-semibold mb-4">
+            Customer Tickets
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {tickets.map((ticket) => (
+
+              <div
+                key={ticket.id}
+                onClick={() => handleSelectTicket(ticket)}
+                className="bg-white rounded-lg shadow-sm border border-gray-100 px-5 py-4 cursor-pointer hover:shadow-md transition"
+              >
+
+                {/* Ticket Title */}
+                <div className="flex items-center justify-between">
+
+                  <h3 className="text-[18px] font-semibold text-[#001931]">
+                    {ticket.title}
+                  </h3>
+
+                  {/* Ticket Status */}
+                  <span
+                    className={`flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full
+                    ${
+                      ticket.status === "open"
+                        ? "text-[#0B5E06] bg-[#B9F8CF]"
+                        : ticket.status === "in-progress"
+                        ? "text-[#9C7700] bg-[#F8F3B9]"
+                        : "text-[#0B5E06] bg-[#B9F8CF]"
+                    }`}
+                  >
+
+                    <span
+                      className={`w-2 h-2 rounded-full
+                      ${
+                        ticket.status === "open"
+                          ? "bg-[#02A53B]"
+                          : ticket.status === "in-progress"
+                          ? "bg-[#FEBB0C]"
+                          : "bg-[#02A53B]"
+                      }`}
+                    ></span>
+
+                    {ticket.status === "open"
+                      ? "Open"
+                      : ticket.status === "in-progress"
+                      ? "In Progress"
+                      : "Resolved"}
+                  </span>
+
+                </div>
+
+                {/* Ticket Description */}
+                <p className="text-[16px] text-[#627382] mt-2 leading-snug">
+                  {ticket.description}
+                </p>
+
+                {/* Ticket Info */}
+                <div className="flex items-center justify-between mt-4 text-[14px] text-[#627382]">
+
+                  <div className="flex items-center gap-4">
+
+                    <span className="font-medium">
+                      #{String(ticket.id).padStart(4, "0")}
+                    </span>
+
+                    {ticket.priority === "High" && (
+                      <span className="text-[#F83044] font-medium uppercase">
+                        High Priority
+                      </span>
+                    )}
+
+                    {ticket.priority === "Medium" && (
+                      <span className="text-[#FEBB0C] font-medium uppercase">
+                        Medium Priority
+                      </span>
+                    )}
+
+                    {ticket.priority === "Low" && (
+                      <span className="text-[#02A53B] font-medium uppercase">
+                        Low Priority
+                      </span>
+                    )}
+
+                  </div>
+
+                  <div className="flex items-center gap-4">
+
+                    <span className="text-[14px] font-normal">
+                      {ticket.customer}
+                    </span>
+
+                    <span className="flex items-center gap-1">
+                      <FontAwesomeIcon
+                        icon={faCalendarDays}
+                        className="text-[14px]"
+                      />
+                      {ticket.createdAt}
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            ))}
+          </div>
+        </div>
+
+        {/* Task Status */}
+        <div className="bg-none rounded-xl p-6">
+
+          <h2 className="text-xl font-semibold mb-5 text-[#001931]">
+            Task Status
+          </h2>
+
+          {inProgress.length === 0 ? (
+            <p className="text-[14px] text-[#A1A1AA]">
+              Select a customer ticket
+            </p>
+          ) : (
+            inProgress.map((task) => (
+
+              <div
+                key={task.id}
+                className="bg-white border border-[#E9E9E9] rounded-lg px-4 py-3 mb-4"
+              >
+
+                <p className="text-[18px] font-medium text-[#001931] mb-3">
+                  {task.title}
+                </p>
+
+                <button
+                  onClick={() => handleComplete(task)}
+                  className="w-full bg-[#02A53B] text-white text-[16px] font-medium py-3 rounded-[4px]"
+                >
+                  Completed
+                </button>
+
+              </div>
+
+            ))
+          )}
+
+          <h2 className="mt-6 mb-3 text-lg font-semibold text-[#001931]">
+            Resolved Task
+          </h2>
+
+          {resolved.length === 0 ? (
+            <p className="text-[14px] text-[#A1A1AA]">
+              No resolved tasks
+            </p>
+          ) : (
+            resolved.map((task) => (
+
+              <div
+                key={task.id}
+                className="bg-[#E0E7FF] text-[#001931] text-[18px] px-4 py-4 font-medium rounded-[4px] mb-2"
+              >
+                {task.title}
+              </div>
+
+            ))
+          )}
+
+        </div>
+      </div>
 
       {/* Toast */}
       <ToastContainer position="top-right" autoClose={2000} />
