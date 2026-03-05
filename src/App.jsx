@@ -6,10 +6,62 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter, faLinkedinIn, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
+const [menuOpen, setMenuOpen] = useState(false);
 
-
-  return (
+return (
     <>
+    {/* Menubar */}
+    <div className="relative"> 
+      <div className="bg-white shadow-md px-8 py-4 flex justify-between items-center">
+         <h1 className="text-[20px] md:text-[24px] font-bold"> CS — Ticket System </h1>
+          <div className="hidden md:flex gap-6 items-center text-[16px] font-normal">
+             <a href="#">Home</a>
+              <a href="#">FAQ</a>
+              <a href="#">Changelog</a>
+              <a href="#">Blog</a>
+              <a href="#">Download</a>
+              <a href="#">Contact</a>
+            <button className="text-white text-[16px] font-semibold rounded-[4px] px-4 py-3 bg-gradient-to-r from-[#632EE3] to-[#9F62F2]"> <a href="#"> + New Ticket</a> 
+            </button> 
+        </div> 
+            <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)} > 
+              {menuOpen ? "✕" : "☰"} </button> 
+    </div> 
+                {menuOpen && ( 
+                  <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md flex flex-col gap-4 px-8 py-4 text-sm font-medium z-50"> 
+                  <a href="#">Home</a>
+                  <a href="#">FAQ</a> 
+                  <a href="#">Changelog</a> 
+                  <a href="#">Blog</a> 
+                  <a href="#">Download</a> 
+                  <a href="#">Contact</a> 
+                  </div> 
+                  )
+               }
+    </div> 
+                
+                {/* Banner Section*/} 
+    <div className="px-8 py-20 grid md:grid-cols-2 gap-6"> 
+      <div className="relative rounded-xl py-20 text-center shadow-lg overflow-hidden text-white  bg-gradient-to-r from-[#632EE3] to-[#9F62F2]">
+                    
+         <img src="/assets/vector1.png" alt="" className="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none" /> 
+
+          <div className="relative z-10"> 
+             <h2 className="text-[24px] font-normal">In-Progress</h2> 
+             <p className="text-5xl font-bold mt-2">{inProgress.length}</p> 
+          </div> 
+      </div> 
+      <div className="relative rounded-xl py-20 text-center shadow-lg overflow-hidden text-white bg-gradient-to-r from-[#54CF68] to-[#00827A]"> 
+
+        <img src="/assets/vector1.png" alt="" className="absolute top-0 left-0 w-full h-full opacity-40 pointer-events-none" /> 
+                        
+          <div className="relative z-10"> 
+              <h2 className="text-[24px] font-normal">Resolved</h2> 
+              <p className="text-5xl font-bold mt-2">{resolved.length}</p> 
+          </div> 
+       </div> 
+  </div>
       
     </>
   );
+
