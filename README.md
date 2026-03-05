@@ -35,7 +35,7 @@ The difference between State and Props is:-
 
 const [count, setCount] = useState(0);
 
--count stores the current value, and setCount updates it. When the state changes, React automatically re-renders the component.
+- count stores the current value, and setCount updates it. When the state changes, React automatically re-renders the component.
 
 
 
