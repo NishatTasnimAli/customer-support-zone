@@ -37,5 +37,18 @@ const [count, setCount] = useState(0);
 
 - count stores the current value, and setCount updates it. When the state changes, React automatically re-renders the component.
 
+## How can you share state between components in React?
+
+State can be shared between components by lifting the state to their common parent component. The parent stores the state and passes it to child components using props. Child components can also receive functions from the parent to update the state.
+
+## How is event handling done in React?
+
+Event handling in React is done using "camelCase" event names and passing functions as event handlers.
+
+-- Example:
+
+<button onClick={handleClick}>Click</button>
+
+The "handleClick" function is executed when the button is clicked. React events work similarly to DOM events but use a synthetic event system for better performance and consistency.
 
 
