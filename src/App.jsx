@@ -142,7 +142,8 @@ export default function App() {
 
   return (
     <>
-      {/* Menubar */}
+      {/* Menubar Section */}
+
       <div className="relative">
         <div className="bg-white shadow-md px-8 py-4 flex justify-between items-center">
 
@@ -185,6 +186,7 @@ export default function App() {
       </div>
 
       {/* Banner Section */}
+
       <div className="px-8 py-20 grid md:grid-cols-2 gap-6">
 
         <div className="relative rounded-xl py-20 text-center shadow-lg overflow-hidden text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]">
@@ -218,7 +220,9 @@ export default function App() {
         </div>
 
       </div>
+
       {/* Main Customer Support section */}
+
       <div className="px-8 py-15 grid md:grid-cols-3 gap-6">
 
         <div className="md:col-span-2">
@@ -274,7 +278,7 @@ export default function App() {
 
                 </div>
 
-                {/* Ticket Description */}
+                {/* Ticket Desc */}
                 <p className="text-[16px] text-[#627382] mt-2 leading-snug">
                   {ticket.description}
                 </p>
@@ -333,6 +337,7 @@ export default function App() {
         </div>
 
         {/* Task Status */}
+
         <div className="bg-none rounded-xl p-6">
 
           <h2 className="text-xl font-semibold mb-5 text-[#001931]">
@@ -367,6 +372,8 @@ export default function App() {
             ))
           )}
 
+          {/* Resolved Task */}
+
           <h2 className="mt-6 mb-3 text-lg font-semibold text-[#001931]">
             Resolved Task
           </h2>
@@ -390,6 +397,169 @@ export default function App() {
 
         </div>
       </div>
+
+      {/* Footer */}
+
+      <footer className="bg-black text-[#9CA3AF] mt-20">
+
+        <div className="mx-auto px-10 py-12 border-b border-[#1f2937]">
+
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
+
+            {/* Logo + Desc */}
+            <div className="md:col-span-2">
+
+              <h2 className="text-white font-semibold text-[24px] mb-4">
+                CS — Ticket System
+              </h2>
+
+              <p className="text-[16px] leading-6 text-[#A1A1AA] max-w-[300px]">
+                CS — Ticket System provides efficient support solutions for
+                businesses of all sizes. Our platform helps manage customer
+                inquiries, track tickets, and improve response times to ensure
+                your clients are always satisfied.
+              </p>
+
+            </div>
+
+            {/* Company Column */}
+            <div className="md:col-span-1">
+
+              <h3 className="text-white text-[20px] font-medium mb-4">
+                Company
+              </h3>
+
+              <ul className="space-y-3 text-[16px]">
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  About Us
+                </li>
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Our Mission
+                </li>
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Contact Sales
+                </li>
+
+              </ul>
+
+            </div>
+
+            {/* Services Column */}
+            <div className="md:col-span-1">
+
+              <h3 className="text-white text-[20px] font-medium mb-4">
+                Services
+              </h3>
+
+              <ul className="space-y-3 text-[16px]">
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Products & Services
+                </li>
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Customer Stories
+                </li>
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Download Apps
+                </li>
+
+              </ul>
+
+            </div>
+
+            {/*  Info Column */}
+            <div className="md:col-span-1">
+
+              <h3 className="text-white text-[20px] font-medium mb-4">
+                Information
+              </h3>
+
+              <ul className="space-y-3 text-[16px]">
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Privacy Policy
+                </li>
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Terms & Conditions
+                </li>
+
+                <li className="text-[#A1A1AA] hover:text-white cursor-pointer">
+                  Join Us
+                </li>
+
+              </ul>
+
+            </div>
+
+            {/* Social Links Column */}
+            <div className="md:col-span-1">
+
+              <h3 className="text-white text-[20px] font-medium mb-4">
+                Social Links
+              </h3>
+
+              <ul className="space-y-4 text-[16px]">
+
+                <li className="flex items-center gap-3">
+                  <FontAwesomeIcon
+                    icon={faXTwitter}
+                    className="bg-white px-1 py-1.5 rounded-full text-black text-[12px]"
+                  />
+                  <span className="text-[#A1A1AA] text-[13px]">
+                    @CS — Ticket System
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <FontAwesomeIcon
+                    icon={faLinkedinIn}
+                    className="bg-white px-1 py-1.5 rounded-full text-black text-[12px]"
+                  />
+                  <span className="text-[#A1A1AA] text-[13px]">
+                    @CS — Ticket System
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <FontAwesomeIcon
+                    icon={faFacebookF}
+                    className="bg-white px-1 py-1.5 rounded-full text-black text-[12px]"
+                  />
+                  <span className="text-[#A1A1AA] text-[13px]">
+                    @CS — Ticket System
+                  </span>
+                </li>
+
+                <li className="flex items-center gap-3">
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className="bg-white px-1 py-1.5 rounded-full text-black text-[12px]"
+                  />
+                  <span className="text-[#A1A1AA] text-[13px]">
+                    support@cst.com
+                  </span>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/*  Copyright */}
+        <div className="text-center text-[16px] text-[#FAFAFA] py-6">
+          © 2026 CS — Ticket System. All rights reserved.
+        </div>
+
+      </footer>
 
       {/* Toast */}
       <ToastContainer position="top-right" autoClose={2000} />
