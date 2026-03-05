@@ -27,5 +27,15 @@ The difference between State and Props is:-
 
 - Props are used to pass data from a parent component to a child component. Props are read-only and cannot be modified by the receiving component.
 
+## What is the useState hook, and how does it work?
+
+- useState is a React Hook that allows functional components to manage state. It returns two values:- The current state value and a function to update that state.
+
+-- Example:-
+
+const [count, setCount] = useState(0);
+
+-count stores the current value, and setCount updates it. When the state changes, React automatically re-renders the component.
+
 
 
