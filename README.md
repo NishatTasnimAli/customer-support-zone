@@ -15,8 +15,17 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-# What is JSX, and why is it used?
+## What is JSX, and why is it used?
 
-JSX  is a syntax extension used in React that allows developers to write HTML-like code inside JavaScript. It makes UI code easier to read and understand by combining structure and logic in one place.
+JSX  is a syntax extension for React that allows developers to write HTML-like code in JavaScript. It makes UI code easier to read and understand by combining structure and logic in one place.
+
+## What is the difference between State and Props?
+
+The difference between State and Props is:-
+
+- A state is a built-in object that stores data that can change over time inside a component. When the State changes, the component re-renders automatically.
+
+- Props are used to pass data from a parent component to a child component. Props are read-only and cannot be modified by the receiving component.
+
 
 
