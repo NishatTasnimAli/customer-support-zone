@@ -47,7 +47,7 @@ Event handling in React is done using "camelCase" event names and passing functi
 
 -- Example:
 
-<button onClick = {handleClick} > Click  </button>
+<button "onClick" = {handleClick} > Click  </button> 
 
 The "handleClick" function is executed when the button is clicked. React events work similarly to DOM events but use a synthetic event system for better performance and consistency.
 
